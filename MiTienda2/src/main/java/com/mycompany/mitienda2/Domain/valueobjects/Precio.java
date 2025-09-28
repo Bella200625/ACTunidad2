@@ -4,10 +4,22 @@
  */
 package com.mycompany.mitienda2.Domain.valueobjects;
 
-/**
- *
- * @author mezab
- */
-public class Precio {
+public final class Precio {
+   //atributo
+    private final double valor;
+  //cohnstructoor
+    public Precio(double valor) {
+    if (valor < 0) {
+       
+        throw new IllegalArgumentException("El precio no puede ser negativo");
+    }
+    this.valor = valor;
+    }
+
+    //Get de valor 
+    public double getValor() {
+        return valor;
+    }
+    
     
 }
