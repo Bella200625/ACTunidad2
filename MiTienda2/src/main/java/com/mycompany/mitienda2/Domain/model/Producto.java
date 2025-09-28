@@ -5,7 +5,7 @@
 package com.mycompany.mitienda2.Domain.model;
 import com.mycompany.mitienda2.Domain.exceptions.ProductoException; 
 import com.mycompany.mitienda2.Domain.valueobjects.*;
-
+import com.mycompany.mitienda2.Domain.enums.ProductoCategoria;
 /**
  *
  * @author mezab
@@ -13,24 +13,26 @@ import com.mycompany.mitienda2.Domain.valueobjects.*;
 public class Producto {
     // Identidad única
         private final String idProducto;
-        private final String codigo;       
-        private String categoria;
+        private final String codigo;    
+        //ENUM
+        private ProductoCategoria categoria;
         private String nombre;
         private String modelo;
         private String descripcion;
+        //AGREGADO RAIZ
         private Precio precio;
         private ProductoAlquiler alquiler;
         private ProductoAltaTecnologia altaTecnologia;
         
         // Constructor con validacion y variantes 
-    public Producto(String idProducto, String codigo, String categoria, String nombre, String modelo, String descripcion,Precio precio, ProductoAlquiler alquiler,ProductoAltaTecnologia altaTecnologia ) {
+    public Producto(String idProducto, String codigo, ProductoCategoria categoria, String nombre, String modelo, String descripcion,Precio precio, ProductoAlquiler alquiler,ProductoAltaTecnologia altaTecnologia ) {
         
             if (idProducto == null || idProducto.isBlank())
                 throw new ProductoException("El ID del Producto no puede estar vacío.");
 
                 if (codigo == null || codigo.isBlank())
                     throw new ProductoException("El código del producto no puede estar vacío.");
-                    if (categoria == null || categoria.isBlank())
+                    if (categoria == null)
                         throw new ProductoException("La categoría es obligatoria.");
                         if (nombre == null || nombre.isBlank())
                             throw new ProductoException("El nombre es obligatorio.");
@@ -42,7 +44,7 @@ public class Producto {
 
             this.idProducto = idProducto;
             this.codigo = codigo;
-            this.categoria = categoria;
+            this.categoria = categoria; 
             this.nombre = nombre;
             this.modelo = modelo;
             this.descripcion = descripcion;

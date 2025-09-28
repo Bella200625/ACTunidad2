@@ -8,10 +8,18 @@ package com.mycompany.mitienda2.Domain.valueobjects;
  *
  * @author mezab
  */
-public record ProductoAlquiler(Precio precioHora) {
-         public ProductoAlquiler {
-            if (precioHora == null) {
-                throw new IllegalArgumentException("El precio del alquiler es obligatorio");
+public final class ProductoAlquiler {
+    //atrinbuto del vo Producto alquiler
+    private final double precioPorHora;
+    //constructor 
+    public ProductoAlquiler(double precioPorHora) {
+        if (precioPorHora <= 0) {
+            throw new IllegalArgumentException("El precio por hora debe ser mayor a 0");
         }
+        this.precioPorHora = precioPorHora;
+    }
+// get de precio por hora
+        public double getPrecioPorHora() {
+            return precioPorHora;
     }
 }

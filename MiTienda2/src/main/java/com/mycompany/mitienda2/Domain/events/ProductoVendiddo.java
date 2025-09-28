@@ -2,14 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.mitienda2.Domain.exceptions;
+package com.mycompany.mitienda2.Domain.events;
 
 /**
  *
  * @author mezab
  */
-public class ProductoException extends RuntimeException {
-            public ProductoException(String message) {
-                super(message);
-        }
+public class ProductoVendiddo {
+    
 }
