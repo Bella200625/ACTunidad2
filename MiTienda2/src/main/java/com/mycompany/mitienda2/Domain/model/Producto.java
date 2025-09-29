@@ -71,17 +71,18 @@ public class Producto {
     }
     //metodo para asignar o reemplaza la información de alta tecnología del producto
 
-     public void asignarAltaTec(AltaTecnologia newAlta) {
+     public void asignarAltaTec(ProductoAltaTecnologia newAlta) {
         if (newAlta == null)
             throw new ProductoException ("El nombre no puede estar vacío.");
                 this.altaTecnologia = newAlta;
     }
      //metodo para actualizar la informacion del alquiler asignado a un producto
-      public void ACTalquiler(Precio newPrecio) {
-        if (newPrecio == null)
-            throw new ProductoException ("El nombre no puede estar vacío.");
-                this.precio = newPrecio;
-    }
+      public void actualizarAlquiler(ProductoAlquiler newAlquiler) {
+        if (newAlquiler == null)
+            throw new ProductoException("El alquiler no puede ser nulo");
+                this.alquiler = newAlquiler;
+}
+
     
   
     
@@ -94,9 +95,11 @@ public class Producto {
                 return codigo;
             }
 
-            public String getCategoria() {
-                return categoria;
-            }
+    public ProductoCategoria getCategoria() {
+        return categoria;
+    }
+
+            
 
             public String getNombre() {
                 return nombre;
