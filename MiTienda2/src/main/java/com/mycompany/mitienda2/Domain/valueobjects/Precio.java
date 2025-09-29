@@ -9,9 +9,9 @@ public final class Precio {
     private final double valor;
   //cohnstructoor
     public Precio(double valor) {
-    if (valor < 0) {
+    if (valor <= 0) {
        
-        throw new IllegalArgumentException("El precio no puede ser negativo");
+        throw new IllegalArgumentException("l precio debe ser un valor positivo.");
     }
     this.valor = valor;
     }

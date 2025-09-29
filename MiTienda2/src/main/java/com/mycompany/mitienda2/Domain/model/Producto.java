@@ -140,5 +140,10 @@ public class Producto {
             public String getDescripcion() {
                 return descripcion;
     }
+
+    @Override
+    public String toString() {
+        return "Producto{" + "idProducto=" + idProducto + ", codigo=" + codigo + ", nombre=" + nombre + ", modelo=" + modelo + ", descripcion=" + descripcion + ", categoria=" + categoria + ", disponibleAlquiler=" + disponibleAlquiler + ", precio=" + precio + ", alquiler=" + alquiler + ", altaTecnologia=" + altaTecnologia + '}';
+    }
     
 }
