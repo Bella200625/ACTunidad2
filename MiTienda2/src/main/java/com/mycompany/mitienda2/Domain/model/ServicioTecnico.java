@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.mitienda2.Domain.model;
-
 /**
  *
  * @author mezab
@@ -12,13 +11,15 @@ import com.mycompany.mitienda2.Domain.exceptions.ServicioTecnicoException;
 import java.time.LocalDate;
 
 public class ServicioTecnico {
-    // Identidad compuesta: Cliente + Producto
+    // Identidad compuesta
     private final String idCliente;
     private final String idProducto;
 
     // Atributos propios de la relación
     private String detallesServicio;
     private LocalDate fecha;
+    
+  
 
     // Constructor con validación
     public ServicioTecnico(String idCliente, String idProducto, String detallesServicio, LocalDate fecha) {
@@ -38,6 +39,7 @@ public class ServicioTecnico {
     }
 
     // Métodos 
+ 
     public void actualizarDetalles(String nuevosDetalles) {
         if (nuevosDetalles == null || nuevosDetalles.isBlank())
                 throw new ServicioTecnicoException("Los detalles del servicio no pueden estar vacíos");
@@ -63,4 +65,6 @@ public class ServicioTecnico {
         public LocalDate getFecha() {
             return fecha;
         }
+
+   
 }

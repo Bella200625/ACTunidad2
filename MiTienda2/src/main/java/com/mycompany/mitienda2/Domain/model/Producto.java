@@ -5,8 +5,8 @@
 package com.mycompany.mitienda2.Domain.model;
 import com.mycompany.mitienda2.Domain.exceptions.ProductoException; 
 import com.mycompany.mitienda2.Domain.valueobjects.*;
-import com.mycompany.mitienda2.Domain.enums.ProductoCategoria;
-import com.mycompany.mitienda2.Domain.enums.DisponibilidadAlquiler;
+import com.mycompany.mitienda2.Domain.enums.ProductoCategoriaEnum;
+import com.mycompany.mitienda2.Domain.enums.DisponibilidadAlquilerEnum;
 /**
  *
  * @author mezab
@@ -19,15 +19,15 @@ public class Producto {
         private String modelo;
         private String descripcion;
         //ENUM
-        private ProductoCategoria categoria;
-        private DisponibilidadAlquiler disponibleAlquiler;
+        private ProductoCategoriaEnum categoria;
+        private DisponibilidadAlquilerEnum disponibleAlquiler;
         //AGREGADO RAIZ
         private Precio precio;
         private ProductoAlquiler alquiler;
         private ProductoAltaTecnologia altaTecnologia;
         
         // Constructor con validacion y variantes 
-    public Producto(String idProducto, String codigo, ProductoCategoria categoria, String nombre, String modelo, String descripcion,Precio precio,DisponibilidadAlquiler disponibleAlquiler,  ProductoAlquiler alquiler,ProductoAltaTecnologia altaTecnologia ) {
+    public Producto(String idProducto, String codigo, ProductoCategoriaEnum categoria, String nombre, String modelo, String descripcion,Precio precio,DisponibilidadAlquilerEnum disponibleAlquiler,  ProductoAlquiler alquiler,ProductoAltaTecnologia altaTecnologia ) {
         
             if (idProducto == null || idProducto.isBlank())
                 throw new ProductoException("El ID del Producto no puede estar vacío.");
@@ -84,14 +84,14 @@ public class Producto {
 }
 
     // Cambiar categoría del producto
-    public void cambiarCategoria(ProductoCategoria nuevaCategoria) {
+    public void cambiarCategoria(ProductoCategoriaEnum nuevaCategoria) {
         if (nuevaCategoria == null)
             throw new ProductoException("La categoría no puede ser nula.");
         this.categoria = nuevaCategoria;
     }
     
     // Cambiar la disponibilidad de alquiler
-    public void actualizarDisponibilidad(DisponibilidadAlquiler nuevaDisponibilidad) {
+    public void actualizarDisponibilidad(DisponibilidadAlquilerEnum nuevaDisponibilidad) {
         if (nuevaDisponibilidad == null)
             throw new ProductoException("La disponibilidad de alquiler no puede ser nula.");
         this.disponibleAlquiler = nuevaDisponibilidad;
@@ -107,11 +107,11 @@ public class Producto {
                 return codigo;
             }
 
-            public ProductoCategoria getCategoria() {
+            public ProductoCategoriaEnum getCategoria() {
                 return categoria;
             }
 
-            public DisponibilidadAlquiler getDisponibleAlquiler() {
+            public DisponibilidadAlquilerEnum getDisponibleAlquiler() {
                 return disponibleAlquiler;
             }
 

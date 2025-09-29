@@ -8,7 +8,10 @@ package com.mycompany.mitienda2.Domain.enums;
  *
  * @author mezab
  */
-public enum DisponibilidadAlquiler {
-    DISPONIBLE_PARA_ALQUILER,
-    NO_SE_ALQUILA
+public enum ProductoCategoriaEnum {
+    IMPRESORA,
+    MONITOR,
+    CPU,
+    DISCO_DURO,
+    OTRO
 }
