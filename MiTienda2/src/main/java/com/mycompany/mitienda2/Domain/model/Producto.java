@@ -6,6 +6,7 @@ package com.mycompany.mitienda2.Domain.model;
 import com.mycompany.mitienda2.Domain.exceptions.ProductoException; 
 import com.mycompany.mitienda2.Domain.valueobjects.*;
 import com.mycompany.mitienda2.Domain.enums.ProductoCategoria;
+import com.mycompany.mitienda2.Domain.enums.DisponibilidadAlquiler;
 /**
  *
  * @author mezab
@@ -14,18 +15,19 @@ public class Producto {
     // Identidad única
         private final String idProducto;
         private final String codigo;    
-        //ENUM
-        private ProductoCategoria categoria;
         private String nombre;
         private String modelo;
         private String descripcion;
+        //ENUM
+        private ProductoCategoria categoria;
+        private DisponibilidadAlquiler disponibleAlquiler;
         //AGREGADO RAIZ
         private Precio precio;
         private ProductoAlquiler alquiler;
         private ProductoAltaTecnologia altaTecnologia;
         
         // Constructor con validacion y variantes 
-    public Producto(String idProducto, String codigo, ProductoCategoria categoria, String nombre, String modelo, String descripcion,Precio precio, ProductoAlquiler alquiler,ProductoAltaTecnologia altaTecnologia ) {
+    public Producto(String idProducto, String codigo, ProductoCategoria categoria, String nombre, String modelo, String descripcion,Precio precio,DisponibilidadAlquiler disponibleAlquiler,  ProductoAlquiler alquiler,ProductoAltaTecnologia altaTecnologia ) {
         
             if (idProducto == null || idProducto.isBlank())
                 throw new ProductoException("El ID del Producto no puede estar vacío.");
@@ -48,6 +50,7 @@ public class Producto {
             this.nombre = nombre;
             this.modelo = modelo;
             this.descripcion = descripcion;
+            this.disponibleAlquiler = disponibleAlquiler; 
             this.precio = precio;
             this.alquiler = alquiler;                    
             this.altaTecnologia = altaTecnologia;
