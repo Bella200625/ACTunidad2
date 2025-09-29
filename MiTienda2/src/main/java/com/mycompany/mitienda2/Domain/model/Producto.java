@@ -83,7 +83,19 @@ public class Producto {
                 this.alquiler = newAlquiler;
 }
 
+    // Cambiar categoría del producto
+    public void cambiarCategoria(ProductoCategoria nuevaCategoria) {
+        if (nuevaCategoria == null)
+            throw new ProductoException("La categoría no puede ser nula.");
+        this.categoria = nuevaCategoria;
+    }
     
+    // Cambiar la disponibilidad de alquiler
+    public void actualizarDisponibilidad(DisponibilidadAlquiler nuevaDisponibilidad) {
+        if (nuevaDisponibilidad == null)
+            throw new ProductoException("La disponibilidad de alquiler no puede ser nula.");
+        this.disponibleAlquiler = nuevaDisponibilidad;
+    }
   
     
             // Getters
@@ -95,9 +107,25 @@ public class Producto {
                 return codigo;
             }
 
-    public ProductoCategoria getCategoria() {
-        return categoria;
-    }
+            public ProductoCategoria getCategoria() {
+                return categoria;
+            }
+
+            public DisponibilidadAlquiler getDisponibleAlquiler() {
+                return disponibleAlquiler;
+            }
+
+            public Precio getPrecio() {
+                return precio;
+            }
+
+            public ProductoAlquiler getAlquiler() {
+                return alquiler;
+            }
+
+            public ProductoAltaTecnologia getAltaTecnologia() {
+                return altaTecnologia;
+            }
 
             
 
