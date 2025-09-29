@@ -8,8 +8,8 @@ package com.mycompany.mitienda2.Domain.exceptions;
  *
  * @author mezab
  */
-public class EMPfabricante extends RuntimeException {
-            public EMPfabricante (String message) {
+public class EMPfabricanteException extends RuntimeException {
+            public EMPfabricanteException (String message) {
                 super(message);
         }
 }
