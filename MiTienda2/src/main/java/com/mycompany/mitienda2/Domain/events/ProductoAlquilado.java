@@ -59,4 +59,12 @@ public class ProductoAlquilado {
     public double getTotalPagado() {
         return totalPagado;
     }
+
+    @Override
+    public String toString() {
+        return "ProductoAlquilado{" + "productoId=" + productoId + ", clienteId=" + clienteId + ", precioPorHora=" + precioPorHora + ", fechaAlquiler=" + fechaAlquiler + ", horasAlquiladas=" + horasAlquiladas + ", totalPagado=" + totalPagado + '}';
+    }
+
+
+
 }
