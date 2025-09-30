@@ -21,6 +21,9 @@ class  ProductoTest {
     
     @Test
     public void test1_IDvacio() {
+    // aqui lo que hacemos es crear un producto con el id vacio para ver si el constructor
+    //  bota la excepcion de dominio ProductoException porque no puede quedar sin id
+    
         
         assertThatThrownBy(() -> 
             new Producto( "", "COD123", ProductoCategoriaEnum.MONITOR,  
@@ -34,6 +37,9 @@ class  ProductoTest {
     @Test
     
     public void test2 (){
+    // aca le metimos un precio cero al producto
+    // porque queremos ver si el value object precio hace su trabajo y no deja pasar eso
+    // la gracia es que tire una IllegalArgumentException diciendo que el valor tiene que ser positivo
             assertThatThrownBy(() -> 
             new Producto("A11", "COD123", ProductoCategoriaEnum.MONITOR,  
                     "Monitor Gamer", "Modelo X", "Monitor 144hz",  
@@ -48,10 +54,14 @@ class  ProductoTest {
 
     @Test
     void impresoraAplicaAServicioTecnico() {
+    // en este test armamos una impresora
+    // luego le preguntamos a la especificacion si aplica a servicio tecnico
+    // como la regla dice que si aplica pues el resultado deberia salir true
+    
         Producto impresora = new Producto(
                 "A22",
                 "COD001",ProductoCategoriaEnum.IMPRESORA, "Impresora HP", "LaserJet 1010",
-                "Impresora láser monocromática",new Precio(500.0),DisponibilidadAlquilerEnum.NO_SE_ALQUILA, null,null
+                "Impresora láser",new Precio(500.0),DisponibilidadAlquilerEnum.NO_SE_ALQUILA, null,null
         );
 
         assertTrue(ServicioTecnicoSpecification.aplicaServicioTecnico(impresora),
