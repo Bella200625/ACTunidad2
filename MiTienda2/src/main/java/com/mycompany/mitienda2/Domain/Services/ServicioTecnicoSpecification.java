@@ -27,3 +27,13 @@ public class ServicioTecnicoSpecification {
                  return producto.getCategoria() == ProductoCategoriaEnum.IMPRESORA;
     }
 }
+
+/* 
+public class ServicioTecnicoSpecification implements Specification<Producto> {
+
+    @Override
+    public boolean isSatisfiedBy(Producto producto) {
+        return producto.getCategoria() == ProductoCategoriaEnum.IMPRESORA;
+    }
+}
+*/

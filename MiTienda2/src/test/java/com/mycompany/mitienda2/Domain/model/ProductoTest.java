@@ -70,6 +70,10 @@ class  ProductoTest {
 
     @Test
     void monitorNoAplicaAServicioTecnico() {
+  // ahora probamos con un monitor
+    // la idea es pasarle ese monitor a la misma funcion
+    // pero aqui la respuesta deberia ser false porque monitores no aplican
+    
         Producto monitor = new Producto(
                 "A33", "COD002",ProductoCategoriaEnum.MONITOR,"Monitor Gamer","Modelo X","Monitor 144hz", new Precio(1000.0),
                 DisponibilidadAlquilerEnum.DISPONIBLE_PARA_ALQUILER,null, null

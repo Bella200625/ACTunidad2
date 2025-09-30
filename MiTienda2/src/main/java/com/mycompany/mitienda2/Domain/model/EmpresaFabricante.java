@@ -23,15 +23,15 @@ public class EmpresaFabricante {
         if (idFabricante == null || idFabricante.isBlank()) {
             throw new EMPfabricanteException("El ID del fabricante no puede estar vacío");
         }
-        if (nombre == null || nombre.isBlank()) {
-            throw new EMPfabricanteException("El nombre del fabricante no puede estar vacío");
-        }
-        if (direccion == null || direccion.isBlank()) {
-            throw new EMPfabricanteException("La dirección del fabricante no puede estar vacía");
-        }
-        if (numeroEmpleados < 1) {
-            throw new EMPfabricanteException("El fabricante debe tener al menos un empleado");
-        }
+            if (nombre == null || nombre.isBlank()) {
+                throw new EMPfabricanteException("El nombre del fabricante no puede estar vacío");
+            }
+                if (direccion == null || direccion.isBlank()) {
+                    throw new EMPfabricanteException("La dirección del fabricante no puede estar vacía");
+                }
+                    if (numeroEmpleados < 1) {
+                        throw new EMPfabricanteException("El fabricante debe tener al menos un empleado");
+                    }
 
         this.idFabricante = idFabricante;
         this.nombre = nombre;

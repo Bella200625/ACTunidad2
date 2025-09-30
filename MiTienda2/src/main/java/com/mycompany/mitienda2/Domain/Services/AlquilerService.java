@@ -16,10 +16,10 @@ import java.util.stream.Collectors;
 
 public class AlquilerService {
 
-    // este metodo recibe una lista de productos
-    // y se encarga de revisar uno por uno cuáles cumplen con la condicione de ser alquilables
-    // la condición de negocio que tenemos es que solo se pueden alquilar monitores y discos duros
-    // entonces se hace un filtro para dejar únicamente esos productos y devolverlos en una nueva lista
+//     este metodo recibe una lista de productos
+//     y se encarga de revisar uno por uno cuáles cumplen con la condicione de ser alquilables
+//     la condición de negocio que tenemos es que solo se pueden alquilar monitores y discos duros
+//     entonces se hace un filtro para dejar únicamente esos productos y devolverlos en una nueva lista
     public List<Producto> listarProductosAlquilables(List<Producto> productos) {
         return productos.stream()
                 .filter(p -> p.getCategoria() == ProductoCategoriaEnum.MONITOR
