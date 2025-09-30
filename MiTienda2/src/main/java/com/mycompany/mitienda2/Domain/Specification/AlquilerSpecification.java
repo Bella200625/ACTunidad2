@@ -24,11 +24,6 @@ public class AlquilerSpecification implements Specification<Producto> {
     }
 }
     /**
-     otra vez lo hago static por que es como una funcion suelta
-     no necesito un objeto de la clase, la idea es solo preguntar
-     si se puede alquilar o no y ya
-
-     igual uso el enum ProductoCategoriaEnum porque asi es mas claro
-     queda tipado y no hay error de letras o espacios como pasa con String
+    
     */
     

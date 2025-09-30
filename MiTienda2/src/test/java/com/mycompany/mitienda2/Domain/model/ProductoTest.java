@@ -36,7 +36,7 @@ class  ProductoTest {
     
     @Test
     
-    public void test2 (){
+    public void test2_Precio (){
     // aca le metimos un precio cero al producto
     // porque queremos ver si el value object precio hace su trabajo y no deja pasar eso
     // la gracia es que tire una IllegalArgumentException diciendo que el valor tiene que ser positivo
@@ -49,11 +49,10 @@ class  ProductoTest {
          .isInstanceOf(IllegalArgumentException.class) 
         .hasMessageContaining("positivo");
     }
-    
-   
+
 
     @Test
-    void impresoraAplicaAServicioTecnico() {
+    void    Test3_impresoraAplicaAServicioTecnico() {
     // en este test armamos una impresora
     // luego le preguntamos a la especificacion si aplica a servicio tecnico
     // como la regla dice que si aplica pues el resultado deberia salir true
@@ -64,12 +63,13 @@ class  ProductoTest {
                 "Impresora láser",new Precio(500.0),DisponibilidadAlquilerEnum.NO_SE_ALQUILA, null,null
         );
 
-        assertTrue(ServicioTecnicoSpecification.aplicaServicioTecnico(impresora),
-                "Las impresoras deben aplicar a servicio técnico");
-    }
+        ServicioTecnicoSpecification spec = new ServicioTecnicoSpecification();
 
+    assertTrue(spec.isSatisfiedBy(impresora),
+            "La categoría " + impresora.getCategoria() + " debería aplicar a servicio técnico");
+}
     @Test
-    void monitorNoAplicaAServicioTecnico() {
+    void Test4_monitorNoAplicaAServicioTecnico() {
   // ahora probamos con un monitor
     // la idea es pasarle ese monitor a la misma funcion
     // pero aqui la respuesta deberia ser false porque monitores no aplican
@@ -79,9 +79,11 @@ class  ProductoTest {
                 DisponibilidadAlquilerEnum.DISPONIBLE_PARA_ALQUILER,null, null
         );
 
-        assertFalse(ServicioTecnicoSpecification.aplicaServicioTecnico(monitor),
-                "Un monitor no debería aplicar a servicio técnico");
-    }
+       ServicioTecnicoSpecification spec = new ServicioTecnicoSpecification();
+
+    assertFalse(spec.isSatisfiedBy(monitor),
+            "La categoría " + monitor.getCategoria() + " no debería aplicar a servicio técnico");
+}
 }
 
 //@Test 
