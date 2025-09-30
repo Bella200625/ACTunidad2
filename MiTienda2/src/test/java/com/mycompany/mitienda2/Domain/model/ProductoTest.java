@@ -7,7 +7,7 @@ import com.mycompany.mitienda2.Domain.enums.*;
 import com.mycompany.mitienda2.Domain.valueobjects.*;
 import com.mycompany.mitienda2.Domain.exceptions.ProductoException; 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import com.mycompany.mitienda2.Domain.Services.ServicioTecnicoSpecification;
+import com.mycompany.mitienda2.Domain.Specification.ServicioTecnicoSpecification;
 /**
  *
  * @author mezab
