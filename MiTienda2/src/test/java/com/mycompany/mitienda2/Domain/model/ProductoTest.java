@@ -84,7 +84,7 @@ class  ProductoTest {
     assertFalse(spec.isSatisfiedBy(monitor),
             "La categoría " + monitor.getCategoria() + " no debería aplicar a servicio técnico");
 }
-}
+
 
 //@Test 
 //public void test1_IDvacio(){
@@ -118,9 +118,35 @@ class  ProductoTest {
 
 
 
-   
+//public class AlquilerServiceConMockTest {
+//
+//    @Test
+//    void deberiaFiltrarProductosAlquilables_UsandoMockRepositorio() {
+//        // 1. Creamos un mock del repositorio (simula ser un ProductoRepository real).
+//        ProductoRepository repoMock = Mockito.mock(ProductoRepository.class);
+//
+//        // 2. Creamos algunos productos de ejemplo (algunos alquilables y otros no).
+        //        Producto monitor = new Producto("1", "COD1", ProductoCategoriaEnum.MONITOR, "Monitor LG", "2023", "Monitor gamer", null, null, null, null);
+        //        Producto discoDuro = new Producto("2", "COD2", ProductoCategoriaEnum.DISCO_DURO, "HDD Seagate", "2TB", "Disco de 2TB", null, null, null, null);
+        //        Producto impresora = new Producto("3", "COD3", ProductoCategoriaEnum.IMPRESORA, "HP Deskjet", "Ink", "Impresora multifuncional", null, null, null, null);
+//
+//        // 3. Configuramos el mock: cuando alguien llame a findAll(), devolverá nuestra lista de prueba.
+//                when(repoMock.findAll()).thenReturn(Arrays.asList(monitor, discoDuro, impresora));
+//
+//        // 4. Pasamos el mock al servicio en lugar de un repositorio real.
+//                AlquilerService alquilerService = new AlquilerService(repoMock);
+//
+//        // 5. Ejecutamos el método que queremos probar.
+//                List<Producto> alquilables = alquilerService.listarProductosAlquilables();
+//
+//        // 6. Verificamos que solo se devuelvan los productos correctos (monitor y disco duro).
+//               assertEquals(2, alquilables.size());
+//    }
+//}
+
 
 
  
 
 
+}
